@@ -17,11 +17,12 @@
 default: &default
   adapter: postgresql
   encoding: unicode
+  username: <%= ENV["BUDGET_APP_DATABASE_USERNAME"] %>
+  password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: <%= ENV["BUDGET_APP_DATABASE_USERNAME"] %>
-  password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
+  
 
 development:
   <<: *default
