@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'splash/index'
   devise_for :users
   
   authenticated :user do
@@ -11,4 +10,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :categories, only: %i[index show new create destroy] do
+    resources :expenses, only: %i[index new create destroy]
+  end
 end
