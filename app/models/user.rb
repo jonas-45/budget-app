@@ -6,4 +6,6 @@ class User < ApplicationRecord
 
   has_many :categories
   has_many :expenses
+
+  validates :name, presence: true, length: {mininmum: 3, maximum: 100}
 end
