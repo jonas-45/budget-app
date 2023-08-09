@@ -1,19 +1,21 @@
-<section>
+<section class="container">
   <%= render partial: 'shared/navbar', locals: {title: 'Add New Category'} %>
   <br/>
   <%= form_with model: @category, url: categories_path(current_user) do |form| %>
-    <div class="field">
+    <div class="form-group field">
       <%= form.label :name, class: "label" %>
-      <%= form.text_field :name, placeholder: 'Enter category name', required: true, class: 'input' %>
-    </div>
+      <%= form.text_field :name, placeholder: 'Enter category name', required: true, class: 'form-control input' %>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div><br/>
 
-    <div class="field">
+    <div class="form-group field">
       <%= form.label :icon, class: "label" %>
-      <%= form.text_field :icon, placeholder: 'Enter icon url', required: true, class: 'input' %>
+      <%= form.text_field :icon, placeholder: 'Enter icon url', required: true, class: 'form-control input' %>
     </div>
+    <br/>
 
     <div class="submit">
-      <%= form.submit 'Save Category' %>
+      <%= form.submit 'Save Category', class: 'btn btn-primary' %>
     </div>
   <%end%>
 </section>
