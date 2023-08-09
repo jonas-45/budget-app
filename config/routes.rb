@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   authenticated :user do
-    root "category#index", as: :authenticated_root
+    root "categories#index", as: :authenticated_root
   end
 
   unauthenticated :user do
