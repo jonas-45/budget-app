@@ -18,3 +18,22 @@
  .title {
   font-weight: bolder;
  }
+
+ .navbar {
+  padding: 1rem;
+}
+
+.no-cat {
+  margin: 3rem auto 0;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 1;
+}
+
+.amount-delete {
+  display: flex;
+  flex-flow: column nowrap;
+}
