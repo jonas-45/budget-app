@@ -1,5 +1,6 @@
 @import "bootstrap";
 @import 'font-awesome';
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -15,21 +16,17 @@
  *= require_tree .
  *= require_self
  */
- body {
+body {
   background-color: #f0f2f1;
   font-family: 'Proxima Nova', sans-serif;
- }
-
- .title {
-  font-weight: bolder;
- }
-
- .navbar {
-  padding: 1rem;
 }
 
-.no-cat {
-  margin: 3rem auto 0;
+.title {
+  font-weight: bolder;
+}
+
+.navbar {
+  padding: 1rem;
 }
 
 .container-info {

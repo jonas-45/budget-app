@@ -14,10 +14,10 @@ class ExpensesController < ApplicationController
       # Create a new ExpensesGroup record to associate the expense with the group
       @expense.categories << @category
 
-      flash[:success] = "Expense successfully saved"
+      flash[:success] = 'Expense successfully saved'
       redirect_to category_path(id: params[:category_id])
     else
-      flash[:danger] = "Expense could not be saved"
+      flash[:danger] = 'Expense could not be saved'
     end
   end
 

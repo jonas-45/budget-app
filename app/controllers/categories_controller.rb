@@ -19,10 +19,10 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.new(category_params)
 
     if @category.save
-      flash[:success] = "Category successfully added"
+      flash[:success] = 'Category successfully added'
       redirect_to authenticated_root_path
     else
-      flash[:danger] = "Category could not be created"
+      flash[:danger] = 'Category could not be created'
       render :new
     end
   end
@@ -34,7 +34,7 @@ class CategoriesController < ApplicationController
       flash[:success] = 'Category successfully removed'
       redirect_to categories_path
     else
-      flash[:danger] = "Category could not be removed"
+      flash[:danger] = 'Category could not be removed'
     end
   end
 
