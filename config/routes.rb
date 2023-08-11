@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'expenses/new'
   devise_for :users
   
   authenticated :user do

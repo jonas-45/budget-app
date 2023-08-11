@@ -1,0 +1,23 @@
+<section class='container'>
+  <%= render partial: 'shared/navbar', locals: {title: 'Add Expense'} %>
+  <br/>
+
+  <div class='form'>
+    <%= form_with model: @expense, url: category_expenses_path do |form| %>
+      <div class='form-group field'>
+        <%= form.label :name, class: 'label' %>
+        <%= form.text_field :name, placeholder: 'Expense name', required: true, class: 'form-control input' %>
+      </div> <br/>
+
+      <div class='form-group field'>
+        <%= form.label :amount, class: 'label' %>
+        <%= form.number_field :amount, placeholder: 'Expense amount $', required: true, class: 'form-control input' %>
+      </div><br/>
+
+      <div>
+        <%= form.submit 'Save Expense', class: 'btn btn-primary' %>
+      </div>
+
+    <%end%>
+  </div>
+</section>
