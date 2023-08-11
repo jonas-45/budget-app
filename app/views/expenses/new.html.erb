@@ -1,8 +1,7 @@
-<section class='container'>
-  <%= render partial: 'shared/navbar', locals: {title: 'Add Expense'} %>
+<%= render partial: 'shared/navbar', locals: {title: 'Add Expense'} %>
   <br/>
 
-  <div class='form'>
+  <div class="form">
     <%= form_with model: @expense, url: category_expenses_path do |form| %>
       <div class='form-group field'>
         <%= form.label :name, class: 'label' %>
@@ -20,4 +19,3 @@
 
     <%end%>
   </div>
-</section>

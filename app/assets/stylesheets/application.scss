@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import 'font-awesome';
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -15,6 +16,7 @@
  *= require_self
  */
  body {
+  background-color: #f0f2f1;
   font-family: 'Proxima Nova', sans-serif;
  }
 
@@ -36,12 +38,58 @@
 }
 
 .image {
-  width: 150px;
-  height: 100px;
+  width: 100px;
+  height: 80px;
 }
 
 .category-item {
+  min-width: 350px;
   background-color: #fff;
   border: 1px solid #d3d3d3;
   border-radius: 5px;
+}
+
+.no-cat {
+  margin: 3rem auto 0;
+}
+
+.expense-container {
+  display: flex;
+  justify-content: center;
+}
+
+.margin-zero {
+  margin: 0;
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.expense-info {
+  background-color: #fff;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+
+.icon {
+  margin-left: 15px;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.form {
+  min-width: 350px;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  border: 1px solid #d3d3d3;
+  padding: 20px 5px;
+  background-color: #fff;
+}
+
+.field {
+  min-width: 350px;
 }

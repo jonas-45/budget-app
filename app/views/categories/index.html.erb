@@ -1,24 +1,24 @@
 <section class="container">
   <%= render partial: 'shared/navbar', locals: {title: 'Categories'} %>
 
-  <div id="categories" class="cat-container d-flex flex-column">
+  <div class="d-flex flex-column justify-content-center align-items-center">
   <% if @categories.empty?%>
     <p class='no-cat text-center fw-normal'>No Category Available</p>
   <% else %>
     <% @categories.each do |category| %>
     <br>
-    <div class='mx-5 pr-3 d-flex flex-row justify-content-start p-1 align-items-center category-item'>
+    <div class='mx-2 pr-3 d-flex flex-row justify-content-start p-1 align-items-center category-item bg-white'>
       <%= image_tag category.icon, class: 'image img-fluid img-thumbnail mx-3' %>
       <div class='container-info mx-2'>
-        <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-4' %></h2>
+        <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-5' %></h2>
         <div class='d-flex flex-row'>
           <p class='fw-lighter fs-6'><%= category.created_at.strftime('%y-%m-%d') %></p>
         </div>
       </div>
 
-      <div class='px-3 d-flex flex-column justify-content-center align-items-end flex-grow-1 flex-basis-1'>
+      <div class='px-2 d-flex flex-column justify-content-center align-items-end flex-grow-1 flex-basis-1'>
         <p class='fw-semibold'>$<%= category.expenses.sum(:amount) %></p>
-        <p><%= button_to 'Delete', category, method: :delete, data: { turbo: false }, class:'btn btn-outline-danger' %> </p>
+        <p><%= button_to 'Delete', category, method: :delete, data: { turbo: false }, class:'btn-sm btn-outline-danger' %> </p>
       </div>
       
     </div>
@@ -27,6 +27,6 @@
 </div>
 <br>
 <div class='d-flex flex-column text-center w-100 p-3'>
-  <%= link_to "Add New Category", new_category_path, class:'text-decoration-none border border-white p-2 fs-5 fw-semibold' %>
+  <%= link_to "Add New Category", new_category_path, class:'text-decoration-none p-2 fs-5 fw-semibold' %>
 </div>
 </section>

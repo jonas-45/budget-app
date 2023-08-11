@@ -1,6 +1,7 @@
 class ExpensesController < ApplicationController
   def new
     @expense = Expense.new
+    @category = Category.find(params[:category_id])
   end
 
   def create
@@ -9,7 +10,7 @@ class ExpensesController < ApplicationController
     @expense.user = current_user
 
     if @expense.save
-      
+
       # Create a new ExpensesGroup record to associate the expense with the group
       @expense.categories << @category
 
