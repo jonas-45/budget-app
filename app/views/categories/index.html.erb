@@ -7,16 +7,16 @@
   <% else %>
     <% @categories.each do |category| %>
     <br>
-    <div class='container d-flex flex-row justify-content-between p-3 align-items-center rounded shadow border-dark'>
-      <img src="<%= category.icon %>" alt=<%= category.name %>, class= 'image img-fluid img-thumbnail' />
-      <div class='container-info'>
-        <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-3' %></h2>
-        <div class='d-flex flex-row gap-3'>
-          <p class='fw-semibold'>$<%= category.created_at %></p>
+    <div class='mx-5 pr-3 d-flex flex-row justify-content-start p-1 align-items-center category-item'>
+      <%= image_tag category.icon, class: 'image img-fluid img-thumbnail mx-3' %>
+      <div class='container-info mx-2'>
+        <h2><%= link_to category.name, category_path(category.id), class: 'text-decoration-none fs-4' %></h2>
+        <div class='d-flex flex-row'>
+          <p class='fw-lighter fs-6'><%= category.created_at.strftime('%y-%m-%d') %></p>
         </div>
       </div>
 
-      <div class='amount-delete'>
+      <div class='px-3 d-flex flex-column justify-content-center align-items-end flex-grow-1 flex-basis-1'>
         <p class='fw-semibold'>$<%= category.expenses.sum(:amount) %></p>
         <p><%= button_to 'Delete', category, method: :delete, data: { turbo: false }, class:'btn btn-outline-danger' %> </p>
       </div>
