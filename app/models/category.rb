@@ -5,5 +5,5 @@ class Category < ApplicationRecord
   has_many :expenses, through: :category_expenses
 
   validates :name, presence: true
-  validates :name, length: {maximum: 30}
+  validates :name, length: { maximum: 30 }
 end
