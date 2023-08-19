@@ -1,29 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe 'Categories', type: :request do
-  include Devise::Test::IntegrationHelpers
-
-  describe 'GET /categories' do
-    before(:each) do
-      @user = User.create(name: 'Jonas', email: 'jonas@gmail.com', password: 'jonas1234')
-      @user.save
-      sign_in @user
-      @category = Category.create(name: 'Car', icon: 'www.unsplash.com', user_id: @user.id)
+  describe 'GET categories/' do
+    it 'returns http redirect' do
+      get '/categories/'
+      expect(response).to have_http_status(:redirect)
     end
+  end
 
-    it 'should return http as successful' do
-      get categories_path
-      expect(response).to have_http_status(:success)
-    end
-
-    it 'should render categories/index page' do
-      get categories_path
-      expect(response).to render_template(:index)
-    end
-
-    it 'should renders categories/new page' do
-      get new_category_path
-      expect(response).to render_template(:new)
+  describe 'GET /new' do
+    it 'returns http redirect' do
+      get '/categories/new'
+      expect(response).to have_http_status(:redirect)
     end
   end
 end

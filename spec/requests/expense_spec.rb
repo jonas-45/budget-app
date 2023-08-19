@@ -8,8 +8,8 @@ RSpec.describe 'Categories', type: :request do
       @user = User.create(name: 'Jonas', email: 'jonas@gmail.com', password: 'jonas1234')
       @user.save
       sign_in @user
-      @category = Category.create(name: 'Car', icon: 'www.unsplash.com', user_id: @user.id)
-      @expense = Expense.create(name: 'Repair', amount: 50, author_id: @user.id)
+      @category = Category.create(name: 'Car', user_id: @user.id)
+      @expense = Expense.create(name: 'Repair', amount: 50, user_id: @user.id)
       get new_category_expense_path(@category)
     end
 
