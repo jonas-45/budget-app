@@ -3,32 +3,29 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   before(:each) do
     @user = User.create(name: 'Jonas', email: 'jonas@gmail.com', password: 'jonas1234')
-    @category = Category.create(name: 'Home', icon: 'www.unsplash.com', user_id: @user.id)
+    @category = Category.create(name: 'Home', user_id: @user.id)
   end
 
-  describe 'Testing Validations' do
-    it 'should be valid' do
-      expect(@category).to be_valid
-    end
-
-    it 'should have a name for category' do
-      expect(@category.name).to eql('Home')
-    end
-
-    it 'should have a valid icon url' do
-      @category.icon = nil
+  describe 'Validation' do
+    it 'should validate the presence of a name' do
+      @category.name = nil
       expect(@category).to_not be_valid
     end
 
-    it 'should have a user id' do
-      expect(@category.user_id).to be_present
+    it 'should validate the length of the name' do
+      @category.name = 'a' * 51
+      expect(@category).to_not be_valid
     end
   end
 
-  describe 'Testing associations' do
-    it 'category should belong to a user' do
-      @category = Category.reflect_on_association(:user)
-      expect(@category.macro).to eql(:belongs_to)
+  describe 'Association' do
+    it 'should belong to a user' do
+      expect(@category.user_id).to eq(@user.id)
+    end
+
+    it 'should have many expenses' do
+      t = Category.reflect_on_association(:expenses)
+      expect(t.macro).to eq(:has_many)
     end
   end
 end

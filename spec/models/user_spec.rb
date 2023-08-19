@@ -16,6 +16,6 @@ RSpec.describe User, type: :model do
   end
 
   it 'should have a password' do
-    expect(subject.password).to eql 'mert1234'
+    expect(subject.password).to eql 'jonas1234'
   end
 end

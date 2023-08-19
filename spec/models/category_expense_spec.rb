@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Category, type: :model do
   before(:each) do
     @user = User.create(name: 'Jonas', email: 'jonask@gmail.com', password: 'jonas1234')
-    @category = Category.create(name: 'Home', icon: 'www.unsplash.com', user_id: @user.id)
-    @expense = Expense.create(name: 'Cleaning', amount: 50, author_id: @user.id)
+    @category = Category.create(name: 'Home', user_id: @user.id)
+    @expense = Expense.create(name: 'Cleaning', amount: 50, user_id: @user.id)
   end
 
   describe 'Testing Validations' do
@@ -22,7 +22,7 @@ RSpec.describe Category, type: :model do
     end
 
     it 'should allow valid author_id' do
-      @expense.author_id = nil
+      @expense.user_id = nil
       expect(@expense).to_not be_valid
     end
   end
