@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 
   resources :users
   resources :categories, only: %i[index show new create destroy] do
-    resources :expenses, only: %i[index new create destroy]
+    resources :expenses, only: %i[new create]
   end
 end
