@@ -54,8 +54,8 @@
 
 # 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo]()<br>
-- [Video Presentation]()
+- [Live Demo](https://budget-app-gd1l.onrender.com)<br>
+- [Video Presentation](https://www.loom.com/share/4f054aad383f4017b7f76a7503621926?sid=ab11f7c8-2a7d-4409-b643-5f61bb7ec515)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
