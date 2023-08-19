@@ -102,6 +102,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
 }
 
 .name-container .d-flex.fixed-bottom {
