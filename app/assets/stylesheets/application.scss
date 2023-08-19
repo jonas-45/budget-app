@@ -90,3 +90,21 @@ body {
 .field {
   min-width: 350px;
 }
+
+.name-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the section takes up at least the viewport height */
+}
+
+.name-container .d-flex {
+  flex: 1; /* Distribute available space evenly between the two divs */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center the content */
+  align-items: center; /* Horizontally center the content */
+}
+
+.name-container .d-flex.fixed-bottom {
+  margin-top: auto; /* Pushes the second div to the bottom */
+}
