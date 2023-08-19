@@ -108,3 +108,35 @@ body {
 .name-container .d-flex.fixed-bottom {
   margin-top: auto; /* Pushes the second div to the bottom */
 }
+
+.signout-btn {
+  text-decoration:none;
+  color:white;
+}
+
+.signout-btn:hover {
+  color:#3778c2;
+  background-color: white;
+  padding: 5px;
+}
+
+.signin-btn {
+  color:white;
+  background-color: #3778c2;
+}
+
+.signin-btn:hover {
+  color: #3778c2;
+  background-color: white;
+  border: 1px solid #3778c2;
+}
+
+.signup-btn {
+  color: #6c757d;
+  border: 3px solid #6c757d;
+}
+
+.signup-btn:hover {
+  background-color: #6c757d;
+  color: white;
+}
